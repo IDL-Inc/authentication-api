@@ -1,42 +1,34 @@
 {
-  "name": "idl-authentication-api",
+  "name": "delivery-auth-service",
   "version": "1.0.0",
+  "description": "Auth service for delivery app",
+  "main": "src/server.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "lint": "eslint src/",
-    "lint:fix": "eslint src/ --fix",
-    "format": "prettier --write src/",
-    "db:init": "node scripts/init-database.js",
-    "db:sync": "node scripts/sync-database.js",
-    "db:reset": "node scripts/sync-database-pg.js --force",
-     "db:seed": "node scripts/seed-database.js",
-     "db:check": "node scripts/check-database.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "seed": "node scripts/seed.js"
   },
   "dependencies": {
-    "bcryptjs": "^3.0.3",
+    "@aws-sdk/client-ses": "^3.936.0",
+    "@n8n/p-retry": "^6.2.0-2",
+    "@sendgrid/mail": "^8.1.6",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
-    "helmet": "^8.1.0",
-    "jsonwebtoken": "^9.0.2",
-    "multer": "^2.0.2",
-    "mysql2": "^3.15.3",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "express-rate-limit": "^6.7.0",
+    "express-validator": "^7.0.1",
+    "helmet": "^6.0.0",
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "morgan": "^1.10.1",
+    "node-fetch": "^3.3.1",
     "nodemailer": "^7.0.10",
-    "pg": "^8.16.3",
-    "sequelize": "^6.37.7",
-    "socket.io": "^4.8.1",
-    "uuid": "^13.0.0"
+    "p-retry": "^7.1.0",
+    "tiny-invariant": "^1.3.3",
+    "validator": "^13.9.0"
   },
   "devDependencies": {
-    "cross-env": "^10.1.0",
-    "eslint": "^9.39.1",
-    "eslint-config-prettier": "^10.1.8",
-    "jest": "^30.2.0",
-    "nodemon": "^3.1.10",
-    "prettier": "^3.6.2",
-    "supertest": "^7.1.4"
+    "nodemon": "^3.1.11"
   }
 }
